@@ -25,7 +25,10 @@ public class PlayerMovement : MonoBehaviour
     {
         defaultSpeed = speed;
         jumpsRemaining = 2; // Initialize the number of jumps remaining to 2
+
+        // Component Reference for private variables
         playerStatus = GetComponent<PlayerStatus>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -54,13 +57,15 @@ public class PlayerMovement : MonoBehaviour
     {
         // Move the player horizontally
         Move();
+        
     }
 
     void Move()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        anim.SetTrigger("Walk");
-        
+        anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("isGrounded", IsGrounded());
+        Flip();
     }
 
     private void Jump()
@@ -68,19 +73,21 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-            jumpsRemaining = 2; // Reset jumps remaining when grounded
-            anim.SetTrigger("Jump");
+            jumpsRemaining = 1; // Reset jumps remaining when grounded
+            anim.SetTrigger("jump");
         }
         else if (jumpsRemaining > 0)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             jumpsRemaining--; // Decrease jumps remaining when performing a double jump
+            anim.SetTrigger("jump");
         }
     }
 
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        
     }
 
     void Die() // Not Implemented Yet
