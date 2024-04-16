@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
     public float sprintSpeed; // Speed when sprinting
     public float speed; // Current speed
     public float jumpingPower;
+    public float wallCheckDistance;
+
     private float defaultSpeed; // Default speed
     private float horizontal;
     private bool isFacingRight = true;
@@ -13,9 +16,12 @@ public class PlayerMovement : MonoBehaviour
 
     private int jumpsRemaining; // Number of jumps remaining
 
+    [Header("Components")]
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform wallCheck;
+    
 
     private Animator anim;
 
@@ -108,4 +114,15 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+    private bool IsFacingWall()
+    {
+        float direction = isFacingRight ? 1f : -1f;
+        Vector2 rayOrigin = new Vector2(wallCheck.position.x, wallCheck.position.y);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * direction, wallCheckDistance, groundLayer);
+
+        // Return true if there's a wall in front
+        return hit.collider != null;
+    }
+
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dc407679036001c46aa2299c0a179cd8
+guid: 86a1f5b5985088042a9f2dc0fbc10000
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Jump_0
+      name: Run_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 7
-        width: 122
-        height: 180
+        x: 27
+        y: 9
+        width: 159
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9657c487bd8e290488e919aedb53432f
-      internalID: 1795790747
+      spriteID: 4f4ea071ba566ef44b43dea2c931d780
+      internalID: -340566953
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Jump_1
+      name: Run_1
       rect:
         serializedVersion: 2
-        x: 141
+        x: 197
+        y: 9
+        width: 168
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e757423d7d1eb94b8002e340a72461a
+      internalID: -491224602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_2
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 9
+        width: 185
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e73ef127c728c046a105d9164de27cc
+      internalID: -835065554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_3
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 9
+        width: 185
+        height: 245
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0688a191b8c844f802fffd9aa3948d
+      internalID: -101050434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_4
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 5
+        width: 167
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e8cb98b3b6e1dd43828bd0dd771fe4c
+      internalID: -1571508879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Run_5
+      rect:
+        serializedVersion: 2
+        x: 938
         y: 8
-        width: 135
-        height: 181
+        width: 166
+        height: 247
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,29 +242,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c2afec285bca0249acccd9a8bf61b6b
-      internalID: -206520444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Jump_2
-      rect:
-        serializedVersion: 2
-        x: 284
-        y: 7
-        width: 137
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51a87db7b6b45954bab9aaccfba2ef47
-      internalID: -1275680902
+      spriteID: 1bfe6f0aa989d9741b6865e7836f1bbb
+      internalID: -1448731334
       vertices: []
       indices: 
       edges: []
@@ -196,9 +259,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Jump_0: 1795790747
-      Jump_1: -206520444
-      Jump_2: -1275680902
+      Run_0: -340566953
+      Run_1: -491224602
+      Run_2: -835065554
+      Run_3: -101050434
+      Run_4: -1571508879
+      Run_5: -1448731334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
