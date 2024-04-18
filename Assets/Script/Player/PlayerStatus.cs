@@ -28,14 +28,6 @@ public class PlayerStatus : MonoBehaviour
         Score();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Coin"))
-        {
-            score += 1;
-        }
-    }
-
     public void Health()
     {
         healthText.text ="Health: " + currHealth.ToString();

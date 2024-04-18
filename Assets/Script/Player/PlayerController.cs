@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform wallCheck;
+    [SerializeField] private LayerMask wallLayer;
     
 
     private Animator anim;
@@ -63,7 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         // Move the player horizontally
         Move();
-        
     }
 
     void Move()
@@ -71,6 +71,13 @@ public class PlayerController : MonoBehaviour
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         anim.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
         anim.SetBool("isGrounded", IsGrounded());
+
+        // Check if facing a wall, then play idle animation
+        if (IsFacingWall())
+        {
+            anim.SetFloat("xVelocity", 0f);
+        }
+
         Flip();
     }
 
@@ -119,10 +126,12 @@ public class PlayerController : MonoBehaviour
     {
         float direction = isFacingRight ? 1f : -1f;
         Vector2 rayOrigin = new Vector2(wallCheck.position.x, wallCheck.position.y);
-        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * direction, wallCheckDistance, groundLayer);
+        RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.right * direction, wallCheckDistance, wallLayer); // Change groundLayer to wallLayer
 
         // Return true if there's a wall in front
         return hit.collider != null;
     }
+
+
 
 }

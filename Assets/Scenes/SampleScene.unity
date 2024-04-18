@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 463534914}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,13 +191,16 @@ MonoBehaviour:
   sprintSpeed: 7
   speed: 4
   jumpingPower: 8
-  wallCheckDistance: 0
+  wallCheckDistance: 0.1
   rb: {fileID: 463534909}
   groundCheck: {fileID: 169965069}
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  wallCheck: {fileID: 0}
+  wallCheck: {fileID: 1113631451}
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!50 &463534909
 Rigidbody2D:
   serializedVersion: 4
@@ -221,7 +224,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -510,6 +513,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -635,6 +639,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd2aa55304551e43959eadc08b08ea2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 463534912}
+  smoothSpeed: 0.125
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,7 +895,7 @@ Transform:
   m_GameObject: {fileID: 1113631450}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.909, y: 0.44, z: 0.028353088}
+  m_LocalPosition: {x: 0.555, y: 0.44, z: 0.028353088}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1126,6 +1145,7 @@ GameObject:
   - component: {fileID: 1736044122}
   - component: {fileID: 1736044121}
   - component: {fileID: 1736044120}
+  - component: {fileID: 1736044123}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -1235,6 +1255,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736044123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736044119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc5e4f35c2bb8524c8c0e0a381471d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerStatus: {fileID: 463534914}
+  coinValue: 0
 --- !u!1 &1816748549
 GameObject:
   m_ObjectHideFlags: 0
